@@ -1,16 +1,17 @@
-/**
- * Эту функцию трогать не нужно
- */
 function print(text) {
   console.log(text);
 }
 
-/**
- * Эту функцию нужно поменять так,
- * чтобы функция sayHello работала корректно
- */
 function isValid(name) {
-  // ваш код...
+
+  //1) через перебор условий c if:
+  // if (name === null) return false
+  // if ((name.trim()).length < 4) return false
+  // if (name.indexOf(' ') !== -1) return false
+  // else return true
+
+  //2) через тернарный оператор. Возможно, визуально менее понятно:
+  return (name === null || (name.trim()).length < 4 || name.indexOf(' ') !== -1) ? false : true
 }
 
 function sayHello() {
@@ -22,3 +23,4 @@ function sayHello() {
     print('Некорректное имя');
   }
 }
+// sayHello();
